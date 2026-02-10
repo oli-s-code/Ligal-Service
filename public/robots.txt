@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://russland-recht-service.de/sitemap.xml
+
+# Crawl-delay für schonenderes Crawling
+Crawl-delay: 10

@@ -88,7 +88,7 @@ export function ContactPage() {
     {
       icon: Mail,
       label: 'E-Mail',
-      value: import.meta.env.VITE_CONTACT_EMAIL || 'u3461019064@id.gle',
+      value: import.meta.env.VITE_CONTACT_EMAIL || 'russlandrecht@gmail.com',
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50',
     },

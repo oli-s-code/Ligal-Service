@@ -16,4 +16,24 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Performance Optimierungen für Production Build
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Entfernt console.log in Production
+      },
+    },
+    rollupOptions: {
+      output: {
+        // Code-Splitting für bessere Cache-Nutzung
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'ui-vendor': ['lucide-react'],
+        },
+      },
+    },
+    // Chunk-Größe Warnung bei 500kb
+    chunkSizeWarningLimit: 500,
+  },
 })

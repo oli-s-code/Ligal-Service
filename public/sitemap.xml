@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://russland-recht-service.de/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://russland-recht-service.de/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://russland-recht-service.de/" />
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://russland-recht-service.de/#about</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://russland-recht-service.de/#about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://russland-recht-service.de/#about" />
+  </url>
+  
+  <!-- Articles Page -->
+  <url>
+    <loc>https://russland-recht-service.de/#articles</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://russland-recht-service.de/#articles" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://russland-recht-service.de/#articles" />
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://russland-recht-service.de/#contact</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://russland-recht-service.de/#contact" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://russland-recht-service.de/#contact" />
+  </url>
+  
+</urlset>
