@@ -65,7 +65,7 @@ const translations = {
     'about.title': 'Über mich',
     'about.subtitle': 'Ihre Expertin für russisches Recht',
     'about.intro.title': 'Willkommen',
-    'about.intro.text': 'Mein Name ist Anna Petrova und ich bin spezialisiert auf russisches Recht und juristische Übersetzungen. Mit über 10 Jahren Erfahrung biete ich professionelle Unterstützung für Privatpersonen und Unternehmen.',
+    'about.intro.text': 'Russland Recht Service ist spezialisiert auf russisches Recht und juristische Übersetzungen. Mit über 10 Jahren Erfahrung bieten wir professionelle Unterstützung für Privatpersonen und Unternehmen.',
     'about.expertise.title': 'Meine Expertise',
     'about.expertise.text': 'Als ausgebildete Juristin mit Schwerpunkt auf russischem und internationalem Recht verstehe ich die Herausforderungen, die sich bei grenzüberschreitenden rechtlichen Angelegenheiten ergeben. Ich unterstütze Sie mit fundierten Kenntnissen und persönlicher Betreuung.',
     'about.approach.title': 'Mein Ansatz',

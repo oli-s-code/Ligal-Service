@@ -21,11 +21,11 @@ export function ContactPage() {
     message: '',
   });
 
-  // ⚠️ WICHTIG: Diese Werte müssen Sie nach dem EmailJS-Setup ersetzen!
-  // Siehe Setup-Anleitung weiter unten im Code
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+  // EmailJS Konfiguration aus Environment Variables
+  // Diese Werte werden nach dem EmailJS-Setup in .env gesetzt
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ export function ContactPage() {
     {
       icon: Mail,
       label: 'E-Mail',
-      value: 'info@rechtsberatung-petrova.de',
+      value: import.meta.env.VITE_CONTACT_EMAIL || 'u3461019064@id.gle',
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50',
     },

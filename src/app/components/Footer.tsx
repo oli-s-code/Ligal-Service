@@ -24,7 +24,7 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-white">
               <Scale className="size-8 text-indigo-400" />
-              <span className="text-xl font-semibold">Rechtsberatung Petrova</span>
+              <span className="text-xl font-semibold">Russland Recht Service</span>
             </div>
             <p className="text-slate-400 leading-relaxed">
               {t('hero.subtitle')}
@@ -58,7 +58,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail className="size-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">info@rechtsberatung-petrova.de</span>
+                <span className="text-slate-400">russlandrecht@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="size-5 text-indigo-400 flex-shrink-0 mt-0.5" />
@@ -76,7 +76,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="pt-8 border-t border-slate-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
-              © {currentYear} Rechtsberatung Petrova. {t('footer.rights')}.
+              © {currentYear} Russland Recht Service. {t('footer.rights')}.
             </p>
             <div className="flex gap-6">
               <button className="text-slate-400 hover:text-white text-sm transition-colors">

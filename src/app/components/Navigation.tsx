@@ -29,7 +29,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             className="flex items-center gap-2 text-xl font-semibold text-slate-900 hover:text-indigo-600 transition-colors"
           >
             <Scale className="size-8 text-indigo-600" />
-            <span className="hidden sm:inline">Rechtsberatung Petrova</span>
+            <span className="hidden sm:inline">Russland Recht Service</span>
           </button>
 
           {/* Desktop Navigation */}
