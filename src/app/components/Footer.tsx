@@ -1,5 +1,5 @@
 import { useLanguage } from '@/app/contexts/LanguageContext';
-import { Scale, Mail, Phone, MapPin } from 'lucide-react';
+import { Scale } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -19,7 +19,7 @@ export function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="bg-slate-900 text-slate-300 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-white">
@@ -47,27 +47,6 @@ export function Footer({ onNavigate }: FooterProps) {
                   </button>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">
-              {t('contact.title')}
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <Mail className="size-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">russlandrecht@gmail.com</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Phone className="size-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">+49 30 1234567</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="size-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400">Unter den Linden 10, 10117 Berlin</span>
-              </li>
             </ul>
           </div>
         </div>
