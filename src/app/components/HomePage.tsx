@@ -137,8 +137,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-2xl opacity-20" />
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1662104935883-e9dd0619eaba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldXJvcGVhbiUyMHdvbWFuJTIwbGF3eWVyJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2OTM1NzAyMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Professional Legal Services"
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1080&auto=format&fit=crop"
+                  alt="Juristische Bücher und Dokumente"
                   className="w-full h-[400px] object-cover"
                 />
               </div>
