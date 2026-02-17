@@ -14,7 +14,7 @@ const translations = {
     'nav.home': 'Startseite',
     'nav.services': 'Dienstleistungen',
     'nav.articles': 'Artikel',
-    'nav.about': 'Über mich',
+    'nav.about': 'Über uns',
     'nav.contact': 'Kontakt',
     
     // Hero
@@ -28,7 +28,7 @@ const translations = {
     'services.subtitle': 'Kompetente Unterstützung in allen rechtlichen Angelegenheiten',
     
     'service.law.title': 'Russisches Recht',
-    'service.law.desc': 'Umfassende Beratung zu russischem Recht, verständlich auf Deutsch erklärt. Ich helfe Ihnen bei allen rechtlichen Fragen.',
+    'service.law.desc': 'Umfassende Beratung zu russischem Recht, verständlich auf Deutsch erklärt. Wir helfen Ihnen bei allen rechtlichen Fragen.',
     
     'service.translation.title': 'Juristische Übersetzungen',
     'service.translation.desc': 'Professionelle Übersetzung juristischer Dokumente zwischen Deutsch und Russisch mit höchster Präzision.',
@@ -62,18 +62,18 @@ const translations = {
     'category.general': 'Allgemeines',
     
     // About
-    'about.title': 'Über mich',
-    'about.subtitle': 'Ihre Expertin für russisches Recht',
+    'about.title': 'Über uns',
+    'about.subtitle': 'Ihre Experten für russisches Recht',
     'about.intro.title': 'Willkommen',
-    'about.intro.text': 'Russland Recht Service ist spezialisiert auf russisches Recht und juristische Übersetzungen. Mit über 10 Jahren Erfahrung bieten wir professionelle Unterstützung für Privatpersonen und Unternehmen.',
+    'about.intro.text': 'Russland Recht Service ist spezialisiert auf russisches Recht und juristische Übersetzungen. Mit mehrjähriger Erfahrung bieten wir professionelle Unterstützung für Privatpersonen und Unternehmen.',
     'about.expertise.title': 'Unsere Expertise',
-    'about.expertise.text': 'Als ausgebildete Juristin mit Schwerpunkt auf russischem und internationalem Recht verstehe ich die Herausforderungen, die sich bei grenzüberschreitenden rechtlichen Angelegenheiten ergeben. Ich unterstütze Sie mit fundierten Kenntnissen und persönlicher Betreuung.',
-    'about.approach.title': 'Mein Ansatz',
-    'about.approach.text': 'Jeder Fall ist einzigartig. Ich nehme mir die Zeit, Ihre Situation genau zu verstehen und entwickle maßgeschneiderte Lösungen. Dabei lege ich Wert auf transparente Kommunikation und verständliche Erklärungen komplexer Sachverhalte.',
+    'about.expertise.text': 'Als ausgebildete Juristen mit Schwerpunkt auf russischem und internationalem Recht verstehen wir die Herausforderungen, die sich bei grenzüberschreitenden rechtlichen Angelegenheiten ergeben. Wir unterstützen Sie mit fundierten Kenntnissen und persönlicher Betreuung.',
+    'about.approach.title': 'Unser Ansatz',
+    'about.approach.text': 'Jeder Fall ist einzigartig. Wir nehmen uns die Zeit, Ihre Situation genau zu verstehen und entwickeln maßgeschneiderte Lösungen. Dabei legen wir Wert auf transparente Kommunikation und verständliche Erklärungen komplexer Sachverhalte.',
     
     // Contact
     'contact.title': 'Kontakt',
-    'contact.subtitle': 'Nehmen Sie Kontakt mit mir auf',
+    'contact.subtitle': 'Nehmen Sie Kontakt mit uns auf',
     'contact.info.title': 'Kontaktinformationen',
     'contact.form.title': 'Kontaktformular',
     'contact.name': 'Name',
@@ -97,7 +97,7 @@ const translations = {
     'nav.home': 'Главная',
     'nav.services': 'Услуги',
     'nav.articles': 'Статьи',
-    'nav.about': 'Обо мне',
+    'nav.about': 'О нас',
     'nav.contact': 'Контакты',
     
     // Hero
@@ -107,11 +107,11 @@ const translations = {
     'hero.learnMore': 'Узнать больше',
     
     // Services
-    'services.title': 'Мои услуги',
+    'services.title': 'Наши услуги',
     'services.subtitle': 'Компетентная поддержка во всех правовых вопросах',
     
     'service.law.title': 'Российское право на немецком языке',
-    'service.law.desc': 'Всесторонние консультации по российскому праву, понятно объясненные на немецком языке. Помогу вам во всех юридических вопросах.',
+    'service.law.desc': 'Всесторонние консультации по российскому праву, понятно объясненные на немецком языке. Поможем вам во всех юридических вопросах.',
     
     'service.translation.title': 'Переводы юридических текстов',
     'service.translation.desc': 'Профессиональный перевод юридических документов между немецким и русским языками с максимальной точностью.',
@@ -145,18 +145,18 @@ const translations = {
     'category.general': 'Общее',
     
     // About
-    'about.title': 'Обо мне',
-    'about.subtitle': 'Ваш эксперт по российскому праву',
+    'about.title': 'О нас',
+    'about.subtitle': 'Ваши эксперты по российскому праву',
     'about.intro.title': 'Добро пожаловать',
-    'about.intro.text': 'Меня зовут Анна Петрова, и я специализируюсь на российском праве и юридических переводах. С более чем 10-летним опытом я предлагаю профессиональную поддержку для частных лиц и компаний.',
-    'about.expertise.title': 'Моя экспертиза',
-    'about.expertise.text': 'Как юрист со специализацией на российском и международном праве, я понимаю проблемы, возникающие при трансграничных юридических вопросах. Поддержу вас глубокими знаниями и личным вниманием.',
-    'about.approach.title': 'Мой подход',
-    'about.approach.text': 'Каждый случай уникален. Я уделяю время, чтобы точно понять вашу ситуацию и разработать индивидуальные решения. При этом ценю прозрачную коммуникацию и понятные объяснения сложных вопросов.',
+    'about.intro.text': 'Russland Recht Service специализируется на российском праве и юридических переводах. С многолетним опытом мы предлагаем профессиональную поддержку для частных лиц и компаний.',
+    'about.expertise.title': 'Наша экспертиза',
+    'about.expertise.text': 'Как юристы со специализацией на российском и международном праве, мы понимаем проблемы, возникающие при трансграничных юридических вопросах. Поддержим вас глубокими знаниями и личным вниманием.',
+    'about.approach.title': 'Наш подход',
+    'about.approach.text': 'Каждый случай уникален. Мы уделяем время, чтобы точно понять вашу ситуацию и разработать индивидуальные решения. При этом ценим прозрачную коммуникацию и понятные объяснения сложных вопросов.',
     
     // Contact
     'contact.title': 'Контакты',
-    'contact.subtitle': 'Свяжитесь со мной',
+    'contact.subtitle': 'Свяжитесь с нами',
     'contact.info.title': 'Контактная информация',
     'contact.form.title': 'Контактная форма',
     'contact.name': 'Имя',

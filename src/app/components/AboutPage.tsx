@@ -80,7 +80,7 @@ export function AboutPage() {
               {t('about.approach.text')}
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Ich verstehe, dass rechtliche Angelegenheiten oft komplex und herausfordernd sein können. Deshalb setze ich auf eine persönliche, lösungsorientierte Herangehensweise, die Ihre individuellen Bedürfnisse in den Mittelpunkt stellt.
+              Wir verstehen, dass rechtliche Angelegenheiten oft komplex und herausfordernd sein können. Deshalb setzen wir auf eine persönliche, lösungsorientierte Herangehensweise, die Ihre individuellen Bedürfnisse in den Mittelpunkt stellt.
             </p>
           </div>
 
@@ -92,13 +92,13 @@ export function AboutPage() {
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="size-5 text-indigo-600 flex-shrink-0 mt-1" />
                 <span className="text-slate-600">
-                  <strong>Gründliche Analyse:</strong> Ich nehme mir die Zeit, Ihre Situation umfassend zu verstehen und alle relevanten Aspekte zu berücksichtigen.
+                  <strong>Gründliche Analyse:</strong> Wir nehmen uns die Zeit, Ihre Situation umfassend zu verstehen und alle relevanten Aspekte zu berücksichtigen.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="size-5 text-indigo-600 flex-shrink-0 mt-1" />
                 <span className="text-slate-600">
-                  <strong>Klare Kommunikation:</strong> Komplexe rechtliche Sachverhalte erkläre ich in verständlicher Sprache, ohne Fachjargon.
+                  <strong>Klare Kommunikation:</strong> Komplexe rechtliche Sachverhalte erklären wir in verständlicher Sprache, ohne Fachjargon.
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -127,10 +127,10 @@ export function AboutPage() {
               Persönliche Betreuung
             </h3>
             <p className="text-slate-600 leading-relaxed">
-              Ihre rechtlichen Angelegenheiten liegen mir am Herzen. Ich biete individuelle Lösungen mit persönlicher Note und höchster Diskretion.
+              Ihre rechtlichen Angelegenheiten liegen uns am Herzen. Wir bieten individuelle Lösungen mit persönlicher Note und höchster Diskretion.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Als Ihre persönliche Rechtsberaterin begleite ich Sie durch alle Phasen Ihres Anliegens. Sie erhalten nicht nur juristische Expertise, sondern auch eine vertrauensvolle Partnerin, die Ihre Interessen mit Engagement vertritt.
+              Als Ihre persönlichen Rechtsberater begleiten wir Sie durch alle Phasen Ihres Anliegens. Sie erhalten nicht nur juristische Expertise, sondern auch vertrauensvolle Partner, die Ihre Interessen mit Engagement vertreten.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export function AboutPage() {
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="size-5 text-indigo-600 flex-shrink-0 mt-1" />
                 <span className="text-slate-600">
-                  <strong>Direkte Ansprechpartnerin:</strong> Sie kommunizieren direkt mit mir, nicht mit wechselnden Mitarbeitern.
+                  <strong>Direkte Ansprechpartner:</strong> Sie kommunizieren direkt mit uns, nicht mit wechselnden Mitarbeitern.
                 </span>
               </li>
               <li className="flex items-start gap-3">
