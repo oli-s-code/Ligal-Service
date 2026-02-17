@@ -24,7 +24,7 @@ const translations = {
     'hero.learnMore': 'Mehr erfahren',
     
     // Services
-    'services.title': 'Meine Dienstleistungen',
+    'services.title': 'Unsere Dienstleistungen',
     'services.subtitle': 'Kompetente Unterstützung in allen rechtlichen Angelegenheiten',
     
     'service.law.title': 'Russisches Recht',
@@ -66,7 +66,7 @@ const translations = {
     'about.subtitle': 'Ihre Expertin für russisches Recht',
     'about.intro.title': 'Willkommen',
     'about.intro.text': 'Russland Recht Service ist spezialisiert auf russisches Recht und juristische Übersetzungen. Mit über 10 Jahren Erfahrung bieten wir professionelle Unterstützung für Privatpersonen und Unternehmen.',
-    'about.expertise.title': 'Meine Expertise',
+    'about.expertise.title': 'Unsere Expertise',
     'about.expertise.text': 'Als ausgebildete Juristin mit Schwerpunkt auf russischem und internationalem Recht verstehe ich die Herausforderungen, die sich bei grenzüberschreitenden rechtlichen Angelegenheiten ergeben. Ich unterstütze Sie mit fundierten Kenntnissen und persönlicher Betreuung.',
     'about.approach.title': 'Mein Ansatz',
     'about.approach.text': 'Jeder Fall ist einzigartig. Ich nehme mir die Zeit, Ihre Situation genau zu verstehen und entwickle maßgeschneiderte Lösungen. Dabei lege ich Wert auf transparente Kommunikation und verständliche Erklärungen komplexer Sachverhalte.',
