@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import { Button } from '@/app/components/ui/button';
 import { Card, CardContent } from '@/app/components/ui/card';
@@ -8,10 +9,13 @@ import {
   FileCheck, 
   MessageSquare, 
   Users,
+  Building2,
   ArrowRight,
   CheckCircle2 
 } from 'lucide-react';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import { ServiceDetailModal } from '@/app/components/ServiceDetailModal';
+import servicesData from '@/app/data/services.json';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -19,51 +23,72 @@ interface HomePageProps {
 
 export function HomePage({ onNavigate }: HomePageProps) {
   const { t } = useLanguage();
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const services = [
     {
       icon: Scale,
-      titleKey: 'service.law.title',
-      descKey: 'service.law.desc',
+      rubrikKey: 'rubrik1',
       color: 'text-indigo-600',
       bgColor: 'bg-indigo-50',
     },
     {
       icon: FileText,
-      titleKey: 'service.translation.title',
-      descKey: 'service.translation.desc',
+      rubrikKey: 'rubrik2',
       color: 'text-purple-600',
       bgColor: 'bg-purple-50',
     },
     {
       icon: Handshake,
-      titleKey: 'service.business.title',
-      descKey: 'service.business.desc',
+      rubrikKey: 'rubrik3',
       color: 'text-pink-600',
       bgColor: 'bg-pink-50',
     },
     {
       icon: FileCheck,
-      titleKey: 'service.documents.title',
-      descKey: 'service.documents.desc',
+      rubrikKey: 'rubrik4',
       color: 'text-blue-600',
       bgColor: 'bg-blue-50',
     },
     {
       icon: MessageSquare,
-      titleKey: 'service.consultation.title',
-      descKey: 'service.consultation.desc',
+      rubrikKey: 'rubrik5',
       color: 'text-emerald-600',
       bgColor: 'bg-emerald-50',
     },
     {
       icon: Users,
-      titleKey: 'service.negotiations.title',
-      descKey: 'service.negotiations.desc',
+      rubrikKey: 'rubrik6',
       color: 'text-orange-600',
       bgColor: 'bg-orange-50',
     },
+    {
+      icon: Building2,
+      rubrikKey: 'rubrik7',
+      color: 'text-teal-600',
+      bgColor: 'bg-teal-50',
+    },
   ];
+
+  const getSelectedServiceData = () => {
+    if (!selectedService) return null;
+    return (servicesData as any)[selectedService];
+  };
+
+  const getSelectedServiceIcon = () => {
+    const service = services.find(s => s.rubrikKey === selectedService);
+    return service?.icon || Scale;
+  };
+
+  const getSelectedServiceColor = () => {
+    const service = services.find(s => s.rubrikKey === selectedService);
+    return service?.color || 'text-indigo-600';
+  };
+
+  const getSelectedServiceBgColor = () => {
+    const service = services.find(s => s.rubrikKey === selectedService);
+    return service?.bgColor || 'bg-indigo-50';
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -136,20 +161,25 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const serviceData = (servicesData as any)[service.rubrikKey];
+            const { language } = useLanguage();
+            const currentLang = language as 'de' | 'ru';
+            
             return (
               <Card 
                 key={index} 
-                className="group hover:shadow-lg transition-all duration-300 border-slate-200 hover:border-indigo-200"
+                className="group hover:shadow-lg transition-all duration-300 border-slate-200 hover:border-indigo-200 cursor-pointer"
+                onClick={() => setSelectedService(service.rubrikKey)}
               >
                 <CardContent className="p-6 space-y-4">
                   <div className={`${service.bgColor} ${service.color} w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <Icon className="size-6" />
                   </div>
                   <h3 className="text-xl font-semibold text-slate-900">
-                    {t(service.titleKey)}
+                    {serviceData[currentLang]}
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    {t(service.descKey)}
+                    {serviceData.description[currentLang]}
                   </p>
                 </CardContent>
               </Card>
@@ -168,6 +198,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </Button>
         </div>
       </section>
+
+      {/* Service Detail Modal */}
+      <ServiceDetailModal 
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        serviceData={getSelectedServiceData()}
+        icon={getSelectedServiceIcon()}
+        color={getSelectedServiceColor()}
+        bgColor={getSelectedServiceBgColor()}
+      />
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 py-16">

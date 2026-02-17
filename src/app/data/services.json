@@ -1,0 +1,188 @@
+{
+    "rubrik1": {
+        "de": "Russisches Recht",
+        "ru": "Российское право",
+        "description": {
+            "de": "Umfassende Beratung zu russischem Recht, verständlich auf Deutsch erklärt.",
+            "ru": "Всесторонние консультации по российскому праву, понятно объясненные на немецком языке."
+        },
+        "services": [
+            {
+                "de": "Rechtsberatung im russischen Recht (auch online)",
+                "ru": "Консультации по праву Российской Федерации (в том числе онлайн)"
+            },
+            {
+                "de": "Prüfung und Analyse von Dokumenten nach russischem Recht",
+                "ru": "Проверка и анализ документов по российскому праву"
+            },
+            {
+                "de": "Rechtliche Analyse russischer Verträge für deutsche Unternehmen",
+                "ru": "Правовой анализ российских договоров для немецких компаний"
+            },
+            {
+                "de": "Erstellung von Gutachten oder schriftlichen Stellungnahmen zum russischen Recht",
+                "ru": "Подготовка экспертных заключений или письменных правовых позиций по российскому праву"
+            },
+            {
+                "de": "Beratung bei Nachlass-, Familien- und Vertragsangelegenheiten nach russischem Recht",
+                "ru": "Консультации по наследственным, семейным и договорным вопросам по российскому праву"
+            },
+            {
+                "de": "Fachwissen im russischen Recht",
+                "ru": "Экспертные знания в российском праве"
+            },
+            {
+                "de": "Digitale Lösungen, die Zeit sparen und Prozesse vereinfachen",
+                "ru": "Цифровые решения, которые экономят время и упрощают процессы"
+            }
+        ]
+    },
+    "rubrik2": {
+        "de": "Juristische Übersetzungen",
+        "ru": "Переводы юридических текстов",
+        "description": {
+            "de": "Professionelle Übersetzung juristischer Dokumente zwischen Deutsch und Russisch.",
+            "ru": "Профессиональный перевод юридических документов между немецким и русским языками."
+        },
+        "services": [
+            {
+                "de": "Übersetzung von Verträgen, Bescheinigungen, Erklärungen",
+                "ru": "Перевод и оформление документов"
+            },
+            {
+                "de": "Prüfung der korrekten Erstellung von Dokumenten auf Russisch",
+                "ru": "Проверка корректности составления документов на русском языке"
+            },
+            {
+                "de": "Professionelle juristische Übersetzungen",
+                "ru": "Профессиональные юридические переводы"
+            },
+            {
+                "de": "Strukturierung und Aufbereitung von Vertragsunterlagen",
+                "ru": "Структурирование и подготовка договорной документации"
+            }
+        ]
+    },
+    "rubrik3": {
+        "de": "Geschäftsbegleitung",
+        "ru": "Сопровождение сделок",
+        "description": {
+            "de": "Begleitung bei der Abwicklung von Geschäften, Verhandlungen und Behördengängen.",
+            "ru": "Сопровождение при проведении сделок, переговорах и взаимодействии с государственными органами."
+        },
+        "services": [
+            {
+                "de": "Begleitung und Unterstützung bei Geschäftsprozessen",
+                "ru": "Сопровождение бизнес‑процессов"
+            },
+            {
+                "de": "Vorbereitung und Strukturierung von Vertragsunterlagen",
+                "ru": "Подготовка и структурирование договорных документов"
+            },
+            {
+                "de": "Begleitung bei Geschäftsverhandlungen",
+                "ru": "Профессиональное сопровождение деловых переговоров"
+            },
+            {
+                "de": "Unterstützung bei Kommunikation mit russischen Behörden",
+                "ru": "Помощь в коммуникации с государственными органами РФ"
+            },
+            {
+                "de": "Begleitung der Korrespondenz mit staatlichen Stellen, Institutionen und Notaren",
+                "ru": "Сопровождение переписки с учреждениями и нотариусами"
+            }
+        ]
+    },
+    "rubrik4": {
+        "de": "Dokumentenabwicklung",
+        "ru": "Помощь в оформлении документов",
+        "description": {
+            "de": "Unterstützung bei der Bearbeitung und Legalisierung internationaler Dokumente.",
+            "ru": "Поддержка в обработке и легализации документов для международных дел."
+        },
+        "services": [
+            {
+                "de": "Digitale Dokumentenorganisation und Fristenkontrolle",
+                "ru": "Цифровая организация документов и контроль сроков"
+            },
+            {
+                "de": "Hilfe bei der Einreichung von Anträgen",
+                "ru": "Помощь в подаче заявлений"
+            },
+            {
+                "de": "Hilfe bei der Vorbereitung von Dokumenten für Behörden",
+                "ru": "Помощь в подготовке документов для государственных органов, включая нотариуса"
+            },
+            {
+                "de": "Legalisierung und Behördenprozesse",
+                "ru": "Легализация, оформление, сопровождение процессов"
+            },
+            {
+                "de": "Unterstützung bei komplexen Unterlagen",
+                "ru": "Поддержка при работе со сложными документами"
+            }
+        ]
+    },
+    "rubrik5": {
+        "de": "Beratungen",
+        "ru": "Консультации",
+        "description": {
+            "de": "Individuelle Rechtsberatung zu russischem und deutschem Recht.",
+            "ru": "Индивидуальные юридические консультации по российскому и немецкому праву."
+        },
+        "services": [
+            {
+                "de": "Erstberatung / kurze Online-Beratung",
+                "ru": "Первое консультирование (онлайн)"
+            },
+            {
+                "de": "Beratung zu internationalen Rechtsfragen",
+                "ru": "Консультации по международным вопросам"
+            }
+        ]
+    },
+    "rubrik6": {
+        "de": "Verhandlungsbegleitung",
+        "ru": "Сопровождение переговоров",
+        "description": {
+            "de": "Begleitung bei Geschäftsverhandlungen und Behördenterminen.",
+            "ru": "Профессиональное сопровождение деловых переговоров и встреч с госорганами."
+        },
+        "services": [
+            {
+                "de": "Verhandlungsbegleitung",
+                "ru": "Сопровождение переговоров"
+            },
+            {
+                "de": "Begleitung bei Behörden- und Geschäftsterminen",
+                "ru": "Сопровождение при встречах с госорганами и деловыми партнёрами"
+            },
+            {
+                "de": "Unterstützung bei juristischen Diskussionen zwischen deutschen und russischen Parteien",
+                "ru": "Поддержка при юридических переговорах между сторонами"
+            }
+        ]
+    },
+    "rubrik7": {
+        "de": "Staatliche Verfahren & Anwälte",
+        "ru": "Государственные процедуры и адвокаты",
+        "description": {
+            "de": "Begleitung staatlicher Verfahren und Unterstützung bei juristischen Prozessen.",
+            "ru": "Сопровождение государственных процедур и поддержка в юридических процессах."
+        },
+        "services": [
+            {
+                "de": "Begleitung staatlicher Verfahren",
+                "ru": "Сопровождение государственных процедур"
+            },
+            {
+                "de": "Zusammenarbeit mit russischen Anwälten",
+                "ru": "Работа с адвокатами"
+            },
+            {
+                "de": "Unterstützung bei komplexen Verwaltungsabläufen",
+                "ru": "Поддержка в сложных административных процессах"
+            }
+        ]
+    }
+}
