@@ -1,18 +1,42 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import { Card, CardContent } from '@/app/components/ui/card';
 import { Button } from '@/app/components/ui/button';
 import { Input } from '@/app/components/ui/input';
-import { Search, Calendar, ArrowRight } from 'lucide-react';
-import { articles, type Article } from '@/app/data/articles';
+import { Search, Calendar, ArrowRight, Loader2 } from 'lucide-react';
+import { getAllArticles } from '@/lib/queries';
+import { urlFor } from '@/lib/sanity';
+import { type SanityArticle } from '@/types/sanity';
 import { ArticleModal } from '@/app/components/ArticleModal';
 
 export function ArticlesPage() {
   const { language, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [selectedArticle, setSelectedArticle] = useState<SanityArticle | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [articles, setArticles] = useState<SanityArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Artikel von Sanity laden
+  useEffect(() => {
+    async function loadArticles() {
+      try {
+        setLoading(true);
+        const data = await getAllArticles();
+        setArticles(data);
+        setError(null);
+      } catch (err) {
+        console.error('Fehler beim Laden der Artikel:', err);
+        setError('Artikel konnten nicht geladen werden');
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    loadArticles();
+  }, []);
 
   const categories = [
     { id: 'all', label: t('articles.allCategories') },
@@ -31,9 +55,9 @@ export function ArticlesPage() {
         article.excerpt[language].toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [searchQuery, selectedCategory, language]);
+  }, [searchQuery, selectedCategory, language, articles]);
 
-  const handleReadMore = (article: Article) => {
+  const handleReadMore = (article: SanityArticle) => {
     setSelectedArticle(article);
     setIsModalOpen(true);
   };
@@ -86,17 +110,39 @@ export function ArticlesPage() {
           </div>
         </div>
 
+        {/* Loading State */}
+        {loading && (
+          <div className="flex items-center justify-center py-16">
+            <Loader2 className="size-12 animate-spin text-indigo-600" />
+          </div>
+        )}
+
+        {/* Error State */}
+        {error && (
+          <div className="text-center py-16">
+            <div className="text-red-400 mb-4">
+              <Search className="size-16 mx-auto" />
+            </div>
+            <p className="text-xl text-red-600 mb-4">{error}</p>
+            <p className="text-slate-600">
+              {language === 'de' 
+                ? 'Bitte überprüfe deine Sanity-Konfiguration oder erstelle Artikel im Sanity Studio.' 
+                : 'Пожалуйста, проверьте конфигурацию Sanity или создайте статьи в Sanity Studio.'}
+            </p>
+          </div>
+        )}
+
         {/* Articles Grid */}
-        {filteredArticles.length > 0 ? (
+        {!loading && !error && filteredArticles.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredArticles.map((article) => (
               <Card 
-                key={article.id} 
+                key={article._id} 
                 className="group hover:shadow-lg transition-all duration-300 overflow-hidden border-slate-200"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
-                    src={article.image}
+                    src={article.image ? urlFor(article.image).width(600).height(400).url() : 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f'}
                     alt={article.title[language]}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -104,7 +150,7 @@ export function ArticlesPage() {
                 <CardContent className="p-6 space-y-3">
                   <div className="flex items-center gap-2 text-sm text-slate-500">
                     <Calendar className="size-4" />
-                    <span>{article.date}</span>
+                    <span>{new Date(article.date).toLocaleDateString(language === 'de' ? 'de-DE' : 'ru-RU')}</span>
                     <span className="px-2 py-1 bg-indigo-50 text-indigo-700 rounded text-xs font-medium">
                       {t(`category.${article.category}`)}
                     </span>
@@ -127,16 +173,23 @@ export function ArticlesPage() {
               </Card>
             ))}
           </div>
-        ) : (
+        ) : !loading && !error ? (
           <div className="text-center py-16">
             <div className="text-slate-400 mb-4">
               <Search className="size-16 mx-auto" />
             </div>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-slate-600 mb-2">
               {t('articles.noResults')}
             </p>
+            {articles.length === 0 && (
+              <p className="text-sm text-slate-500 mt-4">
+                {language === 'de' 
+                  ? 'Noch keine Artikel vorhanden. Erstelle welche im Sanity Studio!' 
+                  : 'Статьи пока отсутствуют. Создайте их в Sanity Studio!'}
+              </p>
+            )}
           </div>
-        )}
+        ) : null}
       </div>
 
       {/* Article Modal */}
