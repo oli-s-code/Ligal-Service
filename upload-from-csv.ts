@@ -15,10 +15,11 @@ const client = createClient({
 });
 
 // HTML zu Portable Text konvertieren (automatisch)
-function htmlToPortableText(html: string) {
+function htmlToPortableText(html: string, articleTitle?: string) {
   const dom = new JSDOM(html);
   const body = dom.window.document.body;
   const blocks: any[] = [];
+  let isFirstH2 = true; // Flag für erste H2-Überschrift
 
   function processElement(element: any): any {
     const tagName = element.tagName?.toLowerCase();
@@ -32,6 +33,16 @@ function htmlToPortableText(html: string) {
     }
 
     if (tagName === 'h2') {
+      // Überprüfen, ob dies die erste H2 ist und ob sie dem Titel entspricht
+      if (isFirstH2 && articleTitle) {
+        const h2Text = element.textContent?.trim();
+        if (h2Text === articleTitle) {
+          isFirstH2 = false;
+          return null; // Diese H2 überspringen
+        }
+      }
+      isFirstH2 = false;
+      
       return {
         _type: 'block',
         style: 'h2',
@@ -97,7 +108,17 @@ function htmlToPortableText(html: string) {
         const tagName = node.tagName.toLowerCase();
         const text = node.textContent.trim();
         
-        if (tagName === 'strong' || tagName === 'b') {
+        if (tagName === 'a') {
+          // Link mit href-Attribut
+          children.push({ 
+            _type: 'span', 
+            text,
+            marks: [{
+              _type: 'link',
+              href: node.getAttribute('href')
+            }]
+          });
+        } else if (tagName === 'strong' || tagName === 'b') {
           children.push({ _type: 'span', text, marks: ['strong'] });
         } else if (tagName === 'em' || tagName === 'i') {
           children.push({ _type: 'span', text, marks: ['em'] });
@@ -114,6 +135,7 @@ function htmlToPortableText(html: string) {
 
   Array.from(body.children).forEach((child: any) => {
     const result = processElement(child);
+    if (result === null) return; // Übersprungene Elemente ignorieren
     if (Array.isArray(result)) {
       blocks.push(...result);
     } else if (result) {
@@ -155,6 +177,7 @@ async function uploadFromCSV() {
       skip_empty_lines: true,
       trim: true,
       bom: true, // UTF-8 BOM support
+      delimiter: ';', // Semikolon als Trennzeichen
     });
 
     console.log(`📊 ${records.length} Artikel gefunden in CSV\n`);
@@ -195,8 +218,8 @@ async function uploadFromCSV() {
         }
 
         // HTML zu Portable Text konvertieren
-        const contentDE = htmlToPortableText(row.Inhalt_Deutsch);
-        const contentRU = htmlToPortableText(row.Inhalt_Russisch);
+        const contentDE = htmlToPortableText(row.Inhalt_Deutsch, row.Titel_Deutsch);
+        const contentRU = htmlToPortableText(row.Inhalt_Russisch, row.Titel_Russisch);
 
         // Artikel erstellen
         const newArticle: any = {

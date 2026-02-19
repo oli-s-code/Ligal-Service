@@ -62,10 +62,10 @@ export function ArticleModal({ article, isOpen, onClose }: ArticleModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] p-0 gap-0">
-        <div className="relative">
+      <DialogContent className="max-w-4xl max-h-[90vh] p-0 gap-0 overflow-hidden flex flex-col">
+        <div className="relative flex flex-col overflow-hidden h-full">
           {/* Article Image */}
-          <div className="aspect-[21/9] overflow-hidden rounded-t-lg">
+          <div className="aspect-[21/9] overflow-hidden rounded-t-lg flex-shrink-0">
             <img
               src={article.image ? urlFor(article.image).width(1200).height(500).url() : 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f'}
               alt={article.title[language]}
@@ -74,7 +74,7 @@ export function ArticleModal({ article, isOpen, onClose }: ArticleModalProps) {
           </div>
 
           {/* Header */}
-          <DialogHeader className="p-6 pb-4">
+          <DialogHeader className="p-6 pb-4 flex-shrink-0">
             <div className="flex items-center gap-3 text-sm text-slate-500 mb-3">
               <div className="flex items-center gap-1.5">
                 <Calendar className="size-4" />
@@ -93,7 +93,7 @@ export function ArticleModal({ article, isOpen, onClose }: ArticleModalProps) {
           </DialogHeader>
 
           {/* Content */}
-          <ScrollArea className="h-[calc(90vh-300px)] px-6 pb-6">
+          <ScrollArea className="flex-1 px-6 pb-6 overflow-y-auto">
             <div className="prose prose-slate max-w-none">
               <PortableText 
                 value={article.content[language]} 
