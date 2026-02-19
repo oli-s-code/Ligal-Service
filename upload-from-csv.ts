@@ -20,15 +20,22 @@ function htmlToPortableText(html: string, articleTitle?: string) {
   const body = dom.window.document.body;
   const blocks: any[] = [];
   let isFirstH2 = true; // Flag für erste H2-Überschrift
+  let linkCounter = 0; // Für eindeutige Link-Keys
+
+  function generateLinkKey() {
+    return `link-${linkCounter++}`;
+  }
 
   function processElement(element: any): any {
     const tagName = element.tagName?.toLowerCase();
 
     if (tagName === 'p') {
+      const result = processChildrenWithLinks(element);
       return {
         _type: 'block',
         style: 'normal',
-        children: processChildren(element),
+        children: result.children,
+        markDefs: result.markDefs,
       };
     }
 
@@ -95,6 +102,51 @@ function htmlToPortableText(html: string, articleTitle?: string) {
     return null;
   }
 
+  function processChildrenWithLinks(element: any): { children: any[], markDefs: any[] } {
+    const children: any[] = [];
+    const markDefs: any[] = [];
+    
+    element.childNodes.forEach((node: any) => {
+      if (node.nodeType === 3) { // Text node
+        const text = node.textContent.trim();
+        if (text) {
+          children.push({ _type: 'span', text, marks: [] });
+        }
+      } else if (node.nodeType === 1) { // Element node
+        const tagName = node.tagName.toLowerCase();
+        const text = node.textContent.trim();
+        
+        if (tagName === 'a') {
+          // Link mit markDef
+          const linkKey = generateLinkKey();
+          children.push({ 
+            _type: 'span', 
+            text,
+            marks: [linkKey]
+          });
+          markDefs.push({
+            _key: linkKey,
+            _type: 'link',
+            href: node.getAttribute('href')
+          });
+        } else if (tagName === 'strong' || tagName === 'b') {
+          children.push({ _type: 'span', text, marks: ['strong'] });
+        } else if (tagName === 'em' || tagName === 'i') {
+          children.push({ _type: 'span', text, marks: ['em'] });
+        } else {
+          if (text) {
+            children.push({ _type: 'span', text, marks: [] });
+          }
+        }
+      }
+    });
+
+    return { 
+      children: children.length > 0 ? children : [{ _type: 'span', text: '', marks: [] }],
+      markDefs 
+    };
+  }
+
   function processChildren(element: any): any[] {
     const children: any[] = [];
     
@@ -108,17 +160,7 @@ function htmlToPortableText(html: string, articleTitle?: string) {
         const tagName = node.tagName.toLowerCase();
         const text = node.textContent.trim();
         
-        if (tagName === 'a') {
-          // Link mit href-Attribut
-          children.push({ 
-            _type: 'span', 
-            text,
-            marks: [{
-              _type: 'link',
-              href: node.getAttribute('href')
-            }]
-          });
-        } else if (tagName === 'strong' || tagName === 'b') {
+        if (tagName === 'strong' || tagName === 'b') {
           children.push({ _type: 'span', text, marks: ['strong'] });
         } else if (tagName === 'em' || tagName === 'i') {
           children.push({ _type: 'span', text, marks: ['em'] });
